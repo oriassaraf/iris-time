@@ -5,9 +5,6 @@ const service = express();
 const request = require('superagent');
 const moment = require('moment');
 
-//https://maps.googleapis.com/maps/api/timezone/json?location=38.908133,-77.047119&timestamp=1458000000&key=YOUR_API_KEY
-//AIzaSyCIY_7PuloxDh-6HR1UjkK4_pwzNm1w2dE
-
 service.get('/service/:location', (req, res, next) => {
     request.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + req.params.location + '&key=' + process.env.GOOGLE_GEOCODING_API_TOKEN, (err, response) => {
         if (err) {
