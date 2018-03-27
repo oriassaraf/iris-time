@@ -16,7 +16,7 @@ server.on('listening', function () {
                 console.log("Error connecting to IRIS");
                 return;
             }
-            console.log(res.body);
+            //console.log(res.body);
         });
     };
 
